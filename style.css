@@ -3,7 +3,16 @@
     width: 350px;
 }
 
+.sociais {
+    padding: 20px;
+}
+
 .sociais img {
     width: 80px;
     height: 50px;
+}
+
+.footer {
+    background-color: rgb(204, 204, 204);
+    padding: 20px;
 }
