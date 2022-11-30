@@ -3,6 +3,7 @@
     require_once 'menu.php';
 ?>
 
+<br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-1">
@@ -20,7 +21,7 @@
                 que poderia fazer muitos outros sites. Ela, apaixonada por programação,
                 começou a buscar formas diferentes de configurar um layout. No ano de
                 2023, se espera que ela consiga um emprego numa empresa que precise de
-                programador e com isso, possa pagar seus estudos de design.
+                programador fullstack e com isso, possa pagar seus estudos de design.
             </p>
         </div>
         <div class="col-md-1">
@@ -37,5 +38,5 @@
 </div>
 
 <?php
-    require_once 'footer';
+    require_once 'footer.php';
 ?>

@@ -1,19 +1,19 @@
 <div class="container-fluid">
         <div class="row text-center footer">
             <div class="col-md-3">
-                <h3>Conserta Félix</h3>
+                <h4>Conserta Félix</h4>
                 <p>Nossa oficina está a mais de 30 anos
                     no mercado trabalhando sério por você<br>
                     e sua segurança. </p>
             </div>
             <div class="col-md-3">
-                <h3>Contatos</h3>
+                <h4>Contatos</h4>
                 <p>(21) 3334-7458</p>
                 <p>(21) 98776-3435</p>
                 <p>(21) 99775-1255</p>
             </div>
             <div class="col-md-3">
-                <h3>Horário de atendimento</h3>
+                <h4>Horário de atendimento</h4>
                 <ul>
                     <li>Segunda a Sexta - 08:00 às 17:00</li>
                     <li>Sábado - 08:00 às 13:00</li>
