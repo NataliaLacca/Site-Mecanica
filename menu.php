@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Conserta Félix Jr</a>
+    <a class="navbar-brand" href="index.php">Conserta Félix Jr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
             aria-expanded="false" aria-label="Alterna navegação">
@@ -33,7 +33,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pecas.php">Peças</a>
-                        <a class="dropdown-item" href="#">Acessórios</a>
+                        <a class="dropdown-item" href="novo.php">Acessórios</a>
                     </div>
                 </li>
                 <li class="nav-item">
