@@ -7,6 +7,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pecas.css">
+    <link rel="stylesheet" href="acessorios.css">
     <title>Oficina Conserta Félix Jr</title>
 </head>
 <body>
