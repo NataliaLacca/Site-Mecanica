@@ -19,18 +19,3 @@
 .menu2 a {
     color: black; 
 }
-
-.container {
-    margin-top: 50px;
-}
-
-.login {
-    padding-top: 30px;
-}
-
-.form-control {
-    display: flex;
-    width: 50%;
-    margin: auto;
-    justify-content: center;
-}
