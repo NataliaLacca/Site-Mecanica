@@ -28,6 +28,8 @@ create table funcionario(
 	cep char(9) not null,
 	numerocasa integer not null,
 	complemento varchar(30),
+	usuario varchar(30) not null,
+	senha varchar(15) not null,
 	foreign key(cep) references endereco(cep));
 	
 create table veiculo(
@@ -84,26 +86,26 @@ insert into cliente(cpf,nome,telefone,cep,numerocasa,complemento) values
 ('123456789-10','Jariele','(21)99886-4587','23082-610',100,'apartamento 10'),
 ('234567891-01','Raphaela','(21)99785-3418','23080-200',222,'casa');
 
-insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,cep,numerocasa,complemento) values 
-('Marcelo','(21)99457-1239','123456789-10','eletricista','4 anos','26551-090',122,'casa'),
-('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa');
+insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,cep,numerocasa,complemento,usuario,senha) values 
+('Marcelo','(21)99457-1239','123456789-10','eletricista','4 anos','26551-090',122,'casa','Marcelo','martelinho'),
+('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa','Alex','madagascar');
 
-insert into veiculo(placa,marca,modelo,cor,ano,cpf) VALUES
+insert into veiculo(placa,marca,modelo,cor,ano,cpf) values
 ('ONX89823','Chevrolet','Onix Plus','Preto','2023','123456789-10'),
 ('CRZ35721','Chevrolet','Cruze','Preto Ouro','2023','234567891-01');
 
-insert into servico(defeito,dataentrada,datasaida,preco,garantia,pagamento,placa) VALUES
+insert into servico(defeito,dataentrada,datasaida,preco,garantia,pagamento,placa) values
 ('pneus furados','2022-12-12','2022-12-13',700,'2 anos','crédito','ONX89823'),
 ('airbag','2022-12-13','2022-12-14',350,'3 anos','débito','CRZ35721');
 
-insert into peca(preco,nome,marca,estoque,modeloano) VALUES
+insert into peca(preco,nome,marca,estoque,modeloano) values
 (700,'pneu','Michelin',500,'Primacy 4 225/50R17'),
 (350,'airbag','Cobalt',150,'Cobalt 2019');
 
 insert into servicopeca(codigopeca,estoque,ordemservico) values
 (1,500,1),(2,150,2);
 
-insert into servicofunc(ordemservico,matricula,descricao) VALUES
+insert into servicofunc(ordemservico,matricula,descricao) values
 (1,1,'trocar pneus'),
 (2,2,'trocar airbag');
 
