@@ -28,8 +28,8 @@ create table funcionario(
 	cep char(9) not null,
 	numerocasa integer not null,
 	complemento varchar(30),
-	usuario varchar(30) not null,
-	senha varchar(15) not null,
+	email varchar(30) not null,
+	senha varchar(300) not null,
 	foreign key(cep) references endereco(cep));
 	
 create table veiculo(
@@ -86,9 +86,9 @@ insert into cliente(cpf,nome,telefone,cep,numerocasa,complemento) values
 ('123456789-10','Jariele','(21)99886-4587','23082-610',100,'apartamento 10'),
 ('234567891-01','Raphaela','(21)99785-3418','23080-200',222,'casa');
 
-insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,cep,numerocasa,complemento,usuario,senha) values 
-('Marcelo','(21)99457-1239','123456789-10','eletricista','4 anos','26551-090',122,'casa','Marcelo','martelinho'),
-('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa','Alex','madagascar');
+insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,cep,numerocasa,complemento,email,senha) values 
+('Marcelo','(21)99457-1239','123456789-10','eletricista','4 anos','26551-090',122,'casa','marcelo.123@gmail.com','martelinho'),
+('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa','alex.456@gmail.com','madagascar');
 
 insert into veiculo(placa,marca,modelo,cor,ano,cpf) values
 ('ONX89823','Chevrolet','Onix Plus','Preto','2023','123456789-10'),
