@@ -14,3 +14,7 @@
 <?php
     echo "Bem-vindo(a) " . $_SESSION['nome'] . "!"; 
 ?>
+
+<?php
+    require_once 'admin.php';
+?>
