@@ -10,7 +10,8 @@
             <h3>Cadastro do Cliente</h3>
         </div>
     </div>
-<form>
+    <br>
+<form method="POST" action="">
 <div class="row">
     <div class="col-md-4">
         <div class="form-group">
@@ -27,11 +28,11 @@
 </div>
         <div class="form-group">
             <labe for="telefone">Telefone</labe>
-            <input type="text" class="form-control" name="telefone">
+            <input type="text" class="form-control" name="telefone" onkeypress="$(this).mask('(00)00000-0000')">
         </div>
         <div class="form-group">
             <labe for="cep">CEP</labe>
-            <input type="text" class="form-control" name="cep">
+            <input type="text" class="form-control" name="cep" onkeypress="$(this).mask('000.000.000-00');">
         </div>
         <div class="form-group">
             <labe for="endereco">Endereço</labe>
@@ -60,6 +61,7 @@
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 </div>
+<br>
 <br>
 
 <?php

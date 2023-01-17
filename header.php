@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pecas.css">
     <link rel="stylesheet" href="acessorios.css">
+    <script src="scripts/cep.js"></script>
     <title>Oficina Conserta Félix Jr</title>
 </head>
 <body>
