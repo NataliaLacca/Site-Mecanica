@@ -22,7 +22,7 @@ create table funcionario(
 	matricula integer primary key auto_increment,
 	nome varchar(60) not null,
 	telefone varchar(15) not null,
-	cpf char(12) not null,
+	cpf char(15) not null,
 	qualificacao varchar(20) not null,
 	experiencia varchar(20) not null,
 	cep char(9) not null,
@@ -83,12 +83,16 @@ insert into endereco(cep,rua,bairro,cidade,uf) values
 ('25400-017','Rua Bela Aurora','Campo Grande','Rio de Janeiro','RJ');
 
 insert into cliente(cpf,nome,telefone,cep,numerocasa,complemento) values
-('123456789-10','Jariele','(21)99886-4587','23082-610',100,'apartamento 10'),
-('234567891-01','Raphaela','(21)99785-3418','23080-200',222,'casa');
+('123456789-10','Maria Jariele de Brito','(21)99886-4587','23082-610',100,'apartamento 10'),
+('234567891-01','Raphaela dos Santos','(21)99785-3418','23080-200',222,'casa');
 
 insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,cep,numerocasa,complemento,email,senha) values 
 ('Marcelo','(21)99457-1239','123456789-10','eletricista','4 anos','26551-090',122,'casa','marcelo.123@gmail.com','martelinho'),
-('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa','alex.456@gmail.com','madagascar');
+('Alexandre','(21)99178-6512','345678912-02','mecânico','2 anos','25400-017',133,'casa','alex.456@gmail.com','madagascar'),
+('Gabriel','(21)99999-9999','185.145.163-17','mecânico','4 anos','26551-090',47,'casa','gabriel.123@gmail.com','$2y$10$7X5ag3ex2PVVhuefQH8INOQfko5lpoNv4JQhFPr7xupCcs4bmcVaC'),
+('Adriana','(21)56845-0056','456.848.451-81','recepcionista','3 anos','26551-090',31,'casa','adri.82@gmail.com','$2y$10$4cVRq/iiiBQOIAN43RMgKe6xRbAjH4QwalKGlSKWPVM37z0pqEZpK'),
+('Lucas','(21)57515-6899','874.710.206-91','eletricista','2 anos','26551-090',10,'casa','lucas.45@gmail.com','$2y$10$Annmfb.Z5nbFiHB6Bg6xFOm65m2OAzYBqHGs4Kyf/hwf.H5HItC3q'),
+('Douglas','(21)96487-2014','784.110.056-96','eletricista','4 anos','26551-090',16,'casa','doug.123@gmail.com','$2y$10$XLfrYJz0xb3e/FSEYmDdoOxgPASoSzxBQ/wpUMwhlGLYMFRYJjHwO');
 
 insert into veiculo(placa,marca,modelo,cor,ano,cpf) values
 ('ONX89823','Chevrolet','Onix Plus','Preto','2023','123456789-10'),

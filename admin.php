@@ -22,4 +22,8 @@
     }
 ?>
 
+<h4>
+<a href="form_funcionario.php"><button type="subimit">Cadastro de Funcionário</button></a>
+<a href="relat_funcionario.php"><button type="subimit">Relatório de Funcionário</button></a>
 <a href="sair.php"><button type="subimit">Sair</button></a>
+</h4>
