@@ -4,61 +4,120 @@
 ?>
 
 <br>
-<div class="container bg-white">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h3>Cadastro do Cliente</h3>
-        </div>
-    </div>
-    <br>
+<br>
 <form method="POST" action="">
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <labe for="cpf">CPF</labe>
-            <input type="text" class="form-control" name="cpf">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Cadastro de Cliente</h3>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" name="nome">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" class="form-control" onkeypress="$(this).mask('(00)00000-0000')">
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="form-group">
+                    <label for="cpf">Cpf</label>
+                    <input type="text" name="cpf" class="form-control" onkeypress="$(this).mask('000.000.000-00');">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="qualificacao">Qualificação</label>
+                    <input type="text" class="form-control" name="qualificacao">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="experiencia">Experiência</label>
+                    <input type="text" class="form-control" name="experiencia">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Endereço de email</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="cep">Cep</label>
+                    <input type="text" name="cep" class="form-control" id="cep" onblur="pesquisacep(this.value);">
+                </div>
+            </div>
+            <div class="col-md-5">   
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="rua" name="rua">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" name="numero">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" name="complemento">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                 <label for="bairro">Bairro</label><p>
+                 <input type="text" class="form-control" id="bairro" name="bairro">
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                 <label for="cidade">Cidade</label><p>
+                 <input type="text" class="form-control" id="cidade" name="cidade">
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                 <label for="uf">Estado</label><p>
+                 <input type="text" class="form-control" id="uf" name="uf">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                 <label for="senha">Informe uma Senha</label><p>
+                 <input type="password" class="form-control" name="senha">
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
+                </div>
+            </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-8">
-        <div class="form-group">
-            <labe for="nome">Nome</labe>
-            <input type="text" class="form-control" name="nome">
-        </div>
-    </div>
-</div>
-        <div class="form-group">
-            <labe for="telefone">Telefone</labe>
-            <input type="text" class="form-control" name="telefone" onkeypress="$(this).mask('(00)00000-0000')">
-        </div>
-        <div class="form-group">
-            <labe for="cep">CEP</labe>
-            <input type="text" class="form-control" name="cep" onkeypress="$(this).mask('000.000.000-00');">
-        </div>
-        <div class="form-group">
-            <labe for="endereco">Endereço</labe>
-            <input type="text" class="form-control" name="enderco">
-        </div>
-        <div class="form-group">
-            <labe for="numero">Número</labe>
-            <input type="text" class="form-control" name="numero">
-        </div>
-        <div class="form-group">
-            <labe for="complemento">Complemento</labe>
-            <input type="text" class="form-control" name="complemento">
-        </div>
-        <div class="form-group">
-            <labe for="bairro">Bairro</labe>
-            <input type="text" class="form-control" name="bairro">
-        </div>
-        <div class="form-group">
-            <labe for="cidade">Cidade</labe>
-            <input type="text" class="form-control" name="cidade">
-        </div>
-        <div class="form-group">
-            <labe for="uf">UF</labe>
-            <input type="text" class="form-control" name="uf">
-        </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 </div>
 <br>

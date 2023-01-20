@@ -59,4 +59,39 @@
 
 <?php
     }
+
+  //Contar os registros no banco
+  $qtregistro = "SELECT COUNT(matricula) AS registros FROM funcionario";
+  $resultado = $conn->prepare($qtregistro);
+  $resultado->execute();
+  $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
+
+  //Quantidade de página que serão usadas - quantidade de registros
+  //dividido pela quantidade de registro por página
+  $qnt_pagina = ceil($resposta['registros'] / $limitereg);
+
+  // Maximo de links      
+  $maximo = 2;
+
+  echo "<a href='relat_funcionario.php?page=1'>Primeira</a> ";
+  // Chamar página anterior verificando a quantidade de páginas menos 1 e 
+  // também verificando se já não é primeira página
+  for ($anterior = $page - $maximo; $anterior <= $page - 1; $anterior++){
+      if ($anterior >= 1){
+        echo "<a href='relat_funcionario.php?page=$anterior'>$anterior</a>";
+      }
+  }
+
+  //Mostrar a página ativa
+  echo "$page";
+
+  //Chamar próxima página, ou seja, verificando a página ativa e acrescentando 1
+  // a ela
+  for ($proxima = $page + 1; $proxima <= $page + $maximo; $proxima++){
+      if ($proxima <= $qnt_pagina){
+          echo "<a href='relat_funcionario.php?page=$proxima'>$proxima</a>";
+      }
+  }
+
+  echo "<a href='relat_funcionario.php?page=$qnt_pagina'>Última</a>";
 ?>
