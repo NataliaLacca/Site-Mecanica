@@ -4,10 +4,10 @@
 
     $pageatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
     $page = (!empty($pageatual)) ? $pageatual : 1;
-    $limitereg = 3;
+    $limitereg = 5;
     $inicio = ($limitereg * $page) - $limitereg;
 
-    $busca = "SELECT matricula,nome,telefone,cpf,email from funcionario LIMIT $inicio,$limitereg";
+    $busca = "SELECT matricula,nome,telefone,cpf,email from funcionario WHERE status='A' LIMIT $inicio,$limitereg";
 
     $resultado = $conn -> prepare($busca);
     $resultado -> execute();
@@ -23,7 +23,6 @@
       <th>Nome</th>
       <th>Telefone</th>
       <th>Email</th>
-      <th>Função</th>
     </tr>
   </thead>
   <tbody>
@@ -46,7 +45,7 @@
       </td>
       <td>
         <?php echo "<a href='excluir.php?matricula=$matricula'>"; ?>
-        <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
+        <input type="submit" class="btn btn-danger" name="excluir" value="Inativar">
       </td>
     </tr>
 
@@ -61,7 +60,7 @@
     }
 
   //Contar os registros no banco
-  $qtregistro = "SELECT COUNT(matricula) AS registros FROM funcionario";
+  $qtregistro = "SELECT COUNT(matricula) AS registros FROM funcionario WHERE status='A'";
   $resultado = $conn->prepare($qtregistro);
   $resultado->execute();
   $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
