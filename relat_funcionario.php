@@ -28,9 +28,9 @@
   <tbody>
 
 <?php
-        while($linha = $resultado -> fetch(PDO::FETCH_ASSOC)){
-            //var_dump($linha);
-            extract($linha);
+  while($linha = $resultado -> fetch(PDO::FETCH_ASSOC)){
+      //var_dump($linha);
+      extract($linha);
 ?>
 
     <tr>

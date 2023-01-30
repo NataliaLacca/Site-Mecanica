@@ -2,10 +2,45 @@
     include_once 'conexao.php';
 ?>
 
+<?php 
+
+if(isset($_FILES['foto'])){
+  $arquivo = ($_FILES['foto']);
+
+
+  if($arquivo['error']){
+      echo 'Erro ao carregar arquivo';
+      header ("Location: frmfuncionario.php");
+  }
+
+  $pasta = "fotos/";
+  $nomearquivo = $arquivo['name'];
+  $novonome = uniqid();
+  $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION));
+
+  if($extensao!="jpg" && $extensao!="png" && $extensao!="webp"){
+      die("Tipo não aceito");
+  }
+  else{
+      $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao);
+
+      if($salvaimg){
+          $path = $pasta . $novonome . "." . $extensao;
+         
+      }
+
+  }
+
+}
+
+?>
+
 <?php
 $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
   
   if(!empty($dadoscad["btncad"])){
+
+     // var_dump($dadoscad);
 
     $vazio = false;
 
@@ -27,7 +62,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 
     $sql = "insert into funcionario(nome,telefone,cpf,qualificacao,experiencia,
     cep,numerocasa,complemento,email,senha,status)values(:nome,:telefone,:cpf,:qualificacao,
-    :experiencia,:cep,:numerocasa,:complemento,:email,:senha,:status)";
+    :experiencia,:cep,:numerocasa,:complemento,:email,:senha,:status,:foto)";
     $salvar = $conn -> prepare($sql);
     $salvar -> bindParam(':nome',$dadoscad['nome'],PDO::PARAM_STR);
     $salvar -> bindParam(':telefone',$dadoscad['telefone'],PDO::PARAM_STR);
@@ -40,6 +75,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
     $salvar -> bindParam(':email',$dadoscad['email'],PDO::PARAM_STR);
     $salvar -> bindParam(':senha',$senha,PDO::PARAM_STR);
     $salvar -> bindParam(':status',$status,PDO::PARAM_STR);
+    $salvar->bindParam(':foto',$path,PDO::PARAM_STR);
     $salvar -> execute();
 
       if($salvar->rowCount()){
@@ -65,7 +101,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 
     $sql = "UPDATE funcionario set nome = :nome, telefone = :telefone, cpf = :cpf, 
     qualificacao = :qualificacao, experiencia = :experiencia, cep = :cep, 
-    numerocasa = :numerocasa, complemento = :complemento, email = :email 
+    numerocasa = :numerocasa, complemento = :complemento, email = :email, foto = :foto 
     WHERE matricula = :matricula";
     $salvar = $conn -> prepare($sql);
     $salvar -> bindParam(':nome',$dadoscad['nome'],PDO::PARAM_STR);
@@ -77,6 +113,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
     $salvar -> bindParam(':numerocasa',$dadoscad['numero'],PDO::PARAM_INT);
     $salvar -> bindParam(':complemento',$dadoscad['complemento'],PDO::PARAM_STR);
     $salvar -> bindParam(':email',$dadoscad['email'],PDO::PARAM_STR);
+    $salvar->bindParam(':foto', $path, PDO::PARAM_STR);
     $salvar -> bindParam(':matricula',$dadoscad['matricula'],PDO::PARAM_INT);
     $salvar -> execute();
 

@@ -28,9 +28,14 @@
                 <h3>Cadastro de Funcionários</h3>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="<?php echo $foto; ?>" style=width:150px;heigth:150px;>
+            </div>
+        </div>
         <br>
         <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-2">
                 <div class="form-group">
                     <label for="matricula">Matricula</label>
                     <input type="text" class="form-control" name="matricula"
@@ -38,7 +43,7 @@
                     >
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="nome">Nome</label>
                     <input type="text" class="form-control" name="nome"
@@ -134,7 +139,7 @@
                  <input type="text" class="form-control" id="cidade" name="cidade">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="form-group">
                  <label for="uf">Estado</label><p>
                  <input type="text" class="form-control" id="uf" name="uf">
@@ -142,18 +147,21 @@
             </div>
         </div>
         <div class="row">
-            </div>
-            <br>
-            <br>
-            <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-5">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Enviar" name="btneditar">
+                    <label for="foto">Foto</label><p>
+                    <input type="file" class="form-control" name="foto">
                 </div>
             </div>
+        </div>    
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Enviar" name="btneditar">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </form>
 
 <?php
