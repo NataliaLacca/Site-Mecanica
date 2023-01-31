@@ -3,7 +3,6 @@
 ?>
 
 <?php 
-
 if(isset($_FILES['foto'])){
   $arquivo = ($_FILES['foto']);
 
@@ -25,14 +24,11 @@ if(isset($_FILES['foto'])){
       $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao);
 
       if($salvaimg){
-          $path = $pasta . $novonome . "." . $extensao;
+        $path = $pasta . $novonome . "." . $extensao;
          
       }
-
   }
-
 }
-
 ?>
 
 <?php
