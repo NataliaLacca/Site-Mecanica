@@ -10,7 +10,7 @@ if(isset($_FILES['foto'])){
 
   if($arquivo['error']){
       echo 'Erro ao carregar arquivo';
-      header ("Location: frmfuncionario.php");
+      header ("Location: form_funcionario.php");
   }
 
   $pasta = "fotos/";
@@ -75,7 +75,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
     $salvar -> bindParam(':email',$dadoscad['email'],PDO::PARAM_STR);
     $salvar -> bindParam(':senha',$senha,PDO::PARAM_STR);
     $salvar -> bindParam(':status',$status,PDO::PARAM_STR);
-    $salvar->bindParam(':foto',$path,PDO::PARAM_STR);
+    $salvar -> bindParam(':foto',$path,PDO::PARAM_STR);
     $salvar -> execute();
 
       if($salvar->rowCount()){
@@ -113,7 +113,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
     $salvar -> bindParam(':numerocasa',$dadoscad['numero'],PDO::PARAM_INT);
     $salvar -> bindParam(':complemento',$dadoscad['complemento'],PDO::PARAM_STR);
     $salvar -> bindParam(':email',$dadoscad['email'],PDO::PARAM_STR);
-    $salvar->bindParam(':foto', $path, PDO::PARAM_STR);
+    $salvar -> bindParam(':foto', $path, PDO::PARAM_STR);
     $salvar -> bindParam(':matricula',$dadoscad['matricula'],PDO::PARAM_INT);
     $salvar -> execute();
 
@@ -122,7 +122,7 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
         parent.location = 'relat_funcionario.php'; </script>";
         unset($dadoscad);
       } else{
-        echo "<script> alert('Erro: Funcionario não encontrado!');
+        echo "<script> alert('Erro: Funcionario não atualizado!');
         parent.location = 'relat_funcionario.php'; </script>";
       }
     }

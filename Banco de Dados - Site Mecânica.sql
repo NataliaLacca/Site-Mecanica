@@ -31,7 +31,7 @@ create table funcionario(
 	email varchar(30) not null,
 	senha varchar(300) not null,
 	status char(1) not null,
-	foto varchar(255) NOT NULL,
+	foto varchar(255) not null,
 	foreign key(cep) references endereco(cep));
 	
 create table veiculo(
@@ -56,11 +56,12 @@ create table servico(
 
 create table peca(
 	codigopeca integer primary key auto_increment,
-	preco double not null,
 	nome varchar(60) not null,
 	marca varchar(40) not null,
+	modeloano varchar(250) not null,
 	estoque integer not null,
-	modeloano varchar(250) not null);
+	preco double not null,
+	foto varchar(255) not null);
 
 create table servicopeca(
 	idservicopeca integer primary key auto_increment,
@@ -102,9 +103,9 @@ insert into servico(defeito,dataentrada,datasaida,preco,garantia,pagamento,placa
 ('pneus furados','2022-12-12','2022-12-13',700,'2 anos','crédito','ONX89823'),
 ('airbag','2022-12-13','2022-12-14',350,'3 anos','débito','CRZ35721');
 
-insert into peca(preco,nome,marca,estoque,modeloano) values
-(700,'pneu','Michelin',500,'Primacy 4 225/50R17'),
-(350,'airbag','Cobalt',150,'Cobalt 2019');
+insert into peca(nome,marca,modeloano,estoque,preco,foto) values
+('pneu','Michelin','Primacy 4 225/50R17',700,200,''),
+('airbag','Cobalt','Cobalt 2019',350,150,'');
 
 insert into servicopeca(codigopeca,estoque,ordemservico) values
 (1,500,1),(2,150,2);
