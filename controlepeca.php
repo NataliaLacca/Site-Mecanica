@@ -49,10 +49,11 @@ $dadoscad = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 
     if(!$vazio){
 
-    $sql = "insert into peca(nome,marca,modeloano,estoque,preco,foto)
-    values(:nome,:marca,:modeloano,:estoque,:preco,:foto)";
+    $sql = "insert into peca(nome,idcategoria,marca,modeloano,estoque,preco,foto)
+    values(:nome,:idcategoria,:marca,:modeloano,:estoque,:preco,:foto)";
     $salvar = $conn -> prepare($sql);
     $salvar -> bindParam(':nome',$dadoscad['nome'],PDO::PARAM_STR);
+    $salvar -> bindParam(':idcategoria',$dadoscad['categoria'],PDO::PARAM_STR);
     $salvar -> bindParam(':marca',$dadoscad['marca'],PDO::PARAM_STR);
     $salvar -> bindParam(':modeloano',$dadoscad['modeloano'],PDO::PARAM_STR);
     $salvar -> bindParam(':estoque',$dadoscad['estoque'],PDO::PARAM_STR);

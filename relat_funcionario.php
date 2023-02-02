@@ -1,13 +1,15 @@
 <?php
     require_once 'conexao.php';
     require_once 'header.php';
+    require_once 'conexao.php';
 
     $pageatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
     $page = (!empty($pageatual)) ? $pageatual : 1;
     $limitereg = 5;
     $inicio = ($limitereg * $page) - $limitereg;
 
-    $busca = "SELECT matricula,nome,telefone,cpf,email from funcionario WHERE status='A' LIMIT $inicio,$limitereg";
+    $busca = "SELECT matricula,nome,telefone,cpf,email
+    from funcionario WHERE status='A' LIMIT $inicio,$limitereg";
 
     $resultado = $conn -> prepare($busca);
     $resultado -> execute();
@@ -41,11 +43,11 @@
       <td><?php echo $email; ?></td>
       <td>
         <?php echo "<a href='editar.php?matricula=$matricula'>"; ?>
-        <input type="submit" class="btn btn-primary" name="editar" value="Editar">
+        <input type="submit" name="editar" class="btn btn-primary" value="Editar">
       </td>
       <td>
         <?php echo "<a href='excluir.php?matricula=$matricula'>"; ?>
-        <input type="submit" class="btn btn-danger" name="excluir" value="Inativar">
+        <input type="submit" name="excluir" class="btn btn-danger" value="Inativar">
       </td>
     </tr>
 

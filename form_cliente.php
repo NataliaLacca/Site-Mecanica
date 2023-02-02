@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome">
+                    <input type="text" name="nome" class="form-control">
                 </div>
             </div>
             <div class="col-md-3">
@@ -37,19 +37,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="qualificacao">Qualificação</label>
-                    <input type="text" class="form-control" name="qualificacao">
+                    <input type="text" name="qualificacao" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="experiencia">Experiência</label>
-                    <input type="text" class="form-control" name="experiencia">
+                    <input type="text" name="experiencia" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Endereço de email</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="email" id="exampleInputEmail1" class="form-control" aria-describedby="emailHelp">
                 </div>
             </div>
         </div>
@@ -57,25 +57,25 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="cep">Cep</label>
-                    <input type="text" name="cep" class="form-control" id="cep" onblur="pesquisacep(this.value);">
+                    <input type="text" name="cep" id="cep" class="form-control" onblur="pesquisacep(this.value);">
                 </div>
             </div>
             <div class="col-md-5">   
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input type="text" class="form-control" id="rua" name="rua">
+                    <input type="text" name="rua" id="rua" class="form-control">
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="numero">Número</label>
-                    <input type="text" class="form-control" name="numero">
+                    <input type="text" name="numero" class="form-control">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="complemento">Complemento</label>
-                    <input type="text" class="form-control" name="complemento">
+                    <input type="text" name="complemento" class="form-control">
                 </div>
             </div>
         </div>
@@ -83,19 +83,19 @@
             <div class="col-md-4">
               <div class="form-group">
                  <label for="bairro">Bairro</label><p>
-                 <input type="text" class="form-control" id="bairro" name="bairro">
+                 <input type="text" name="bairro" id="bairro" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                  <label for="cidade">Cidade</label><p>
-                 <input type="text" class="form-control" id="cidade" name="cidade">
+                 <input type="text" name="cidade" id="cidade" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                  <label for="uf">Estado</label><p>
-                 <input type="text" class="form-control" id="uf" name="uf">
+                 <input type="text" name="uf" id="uf" class="form-control">
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
             <div class="col-md-3">
               <div class="form-group">
                  <label for="senha">Informe uma Senha</label><p>
-                 <input type="password" class="form-control" name="senha">
+                 <input type="password" name="senha" class="form-control">
                 </div>
             </div>
             </div>
@@ -112,7 +112,7 @@
             <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
+                    <input type="submit" name="btncad" class="btn btn-primary" value="Enviar">
                 </div>
             </div>
             </div>

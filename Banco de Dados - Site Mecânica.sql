@@ -54,15 +54,21 @@ create table servico(
 	placa char(8) not null,
 	foreign key(placa) references veiculo(placa));
 
+create table categoria(
+	idcategoria integer primary key auto_increment,
+	categoria varchar (60));
+
 create table peca(
 	codigopeca integer primary key auto_increment,
 	nome varchar(60) not null,
 	descricao varchar(255) not null,
+	idcategoria integer not null,
 	marca varchar(40) not null,
 	modeloano varchar(250) not null,
 	estoque integer not null,
 	preco double not null,
-	foto varchar(255) not null);
+	foto varchar(255) not null,
+	foreign key(idcategoria) references categoria(idcategoria));
 
 create table servicopeca(
 	idservicopeca integer primary key auto_increment,
@@ -104,11 +110,18 @@ insert into servico(defeito,dataentrada,datasaida,preco,garantia,pagamento,placa
 ('pneus furados','2022-12-12','2022-12-13',700,'2 anos','crédito','ONX89823'),
 ('airbag','2022-12-13','2022-12-14',350,'3 anos','débito','CRZ35721');
 
-insert into peca(nome,descricao,marca,modeloano,estoque,preco,foto) values
-('amortecedor','imagina uma descrição legal aqui','michelin','2000/2010',700,200,'produtos/amortecedor.png'),
-('bieleta','imagina uma descrição legal aqui','michelin','2000/2010',600,150,'produtos/bieleta.png'),
-('bobina','imagina uma descrição legal aqui','michelin','2000/2010',500,200,'produtos/bobina.png'),
-('vela de carro','imagina uma descrição legal aqui','michelin','2000/2010',350,150,'produtos/vela_carro.png');
+insert into categoria(categoria) values
+('acessórios'),
+('peças'),
+('tintas'),
+('óleos'),
+('latarias');
+
+insert into peca(nome,descricao,idcategoria,marca,modeloano,estoque,preco,foto) values
+('amortecedor','imagina uma descrição legal aqui','2','michelin','2000/2010',700,200,'produtos/amortecedor.png'),
+('bieleta','imagina uma descrição legal aqui','2','michelin','2000/2010',600,150,'produtos/bieleta.png'),
+('bobina','imagina uma descrição legal aqui','2','michelin','2000/2010',500,200,'produtos/bobina.png'),
+('vela de carro','imagina uma descrição legal aqui','2','michelin','2000/2010',350,150,'produtos/vela_carro.png');
 
 insert into servicopeca(codigopeca,estoque,ordemservico) values
 (1,500,1),(2,150,2);

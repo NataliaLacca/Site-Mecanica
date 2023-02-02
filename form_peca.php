@@ -1,6 +1,7 @@
 <?php
     require_once 'header.php';
     require_once 'menu.php';
+    require_once 'conexao.php';
 ?>
 
 <br>
@@ -17,7 +18,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome">
+                    <input type="text" name="nome" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
@@ -37,26 +38,47 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="estoque">Estoque</label>
-                    <input type="text" class="form-control" name="estoque">
+                    <input type="text" name="estoque" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="text" class="form-control" name="preco">
+                    <input type="text" name="preco" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" class="form-control">
+                        <?php 
+                            $sql="SELECT * from categoria";
+                            $resultado=$conn->prepare($sql);
+                            $resultado->execute();
+
+                            if(($resultado) && ($resultado->rowCount()!=0)){
+                                while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+                                    extract($linha);
+                        ?>
+                        <option value="<?php echo $idcategoria; ?>"><?php echo $categoria; ?></option>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                  <label for="foto">Foto</label><p>
-                 <input type="file" class="form-control" name="foto">
+                 <input type="file" name="foto" class="form-control">
                 </div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
+                    <input type="submit" name="btncad" class="btn btn-primary" value="Enviar">
                 </div>
             </div>
             </div>
