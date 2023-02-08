@@ -70,6 +70,14 @@ create table peca(
 	foto varchar(255) not null,
 	foreign key(idcategoria) references categoria(idcategoria));
 
+create table carrinho(
+	codigopeca integer not null,
+	nome varchar(60) not null,
+	quantcomprada char(4) not null,
+	preco double not null,
+	foto varchar(255) not null,
+	foreign key(codigopeca) references peca(codigopeca));
+
 create table servicopeca(
 	idservicopeca integer primary key auto_increment,
 	codigopeca integer not null,

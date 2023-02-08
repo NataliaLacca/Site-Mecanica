@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  ob_start();
+
+  if(!isset($_SESSION["quant"])){
+    $_SESSION["quant"]=0;
+  }
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.php">Conserta Félix Jr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -44,9 +53,13 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
-                aria-label="Pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                <a href="form_carrinho.php">
+                <img src="src/carrinho.png" style=width:60px;height:60px;>
+                <?php
+                    if($_SESSION["quant"]>0){
+                    echo $_SESSION["quant"];
+                    }
+                ?>
             </form>
         </div>
 </nav>

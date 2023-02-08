@@ -4,7 +4,7 @@
   require_once 'conexao.php';
 
 $sql = "SELECT * from peca";
-$resultado = $conn->prepare($sql);
+$resultado = $conn -> prepare($sql);
 $resultado -> execute();
 
 if(($resultado) and ($resultado->rowCount()!=0)){
@@ -24,12 +24,14 @@ if(($resultado) and ($resultado->rowCount()!=0)){
     <h5 class="card-title"><?php echo $nome;?></h5>
     <p class="card-text"><?php echo $descricao;?></p>
     <p>R$ <?php echo $preco; ?></p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vela">
-      Comprar
-    </button>
+    <form action="carrinho.php" method="post">
+      <h5><label>Quantidade:</label>
+      <input type="number" name="quantcomprada" value="1" style=width:50px;></h5>
+      <input type="hidden" name="codigopeca" value="<?php echo $codigopeca; ?>">
+      <input type="submit" class="btn btn-primary" value="Comprar">
+    </form>
   </div>
 </div>
-
 
     </div>
     <?php 
