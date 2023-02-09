@@ -14,7 +14,7 @@
     $dadoslogin = filter_input_array(INPUT_POST,FILTER_DEFAULT);
   
     if(!empty($dadoslogin["btnlogin"])){
-        var_dump($dadoslogin);
+        //var_dump($dadoslogin);
 
         $sql = "SELECT matricula,nome,email,senha FROM funcionario WHERE email =:usuario LIMIT 1";
         $resultado = $conn -> prepare($sql);
@@ -23,14 +23,30 @@
 
         if(($resultado) AND ($resultado -> rowCount() != 0)){
             $row_usuario = $resultado -> fetch(PDO::FETCH_ASSOC);
-            var_dump($row_usuario);
+            //var_dump($row_usuario);
 
             if(password_verify($dadoslogin['senha'],$row_usuario['senha'])){
                 $_SESSION['nome'] = $row_usuario['nome'];
-                header("location: admin.php");
-            }
-        }
-    }
+                $_SESSION['matricula'] = $row_usuario['matricula'];
+                if($_SESSION["carrinho"]==true){
+                    header("Location:form_carrinho.php");
+                }
+                    else{
+                        header("Location: admin.php");
+                    }
+                        }
+                        else{
+                            $_SESSION['msg'] = "Usuário ou Senha não encontrados";
+                        }
+                            }			
+                            else{
+                                $_SESSION['msg'] = "Usuário ou Senha não encontrados";
+                            }
+                                }
+                                if(isset($_SESSION['msg'])){
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                }
 ?>
 
 <style>

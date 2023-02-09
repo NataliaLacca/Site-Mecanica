@@ -47,7 +47,7 @@
   <td><?php echo $quantcomprada; ?></td>
   <td><?php echo $total = $quantcomprada * $preco; $totalgeral += $total; ?></td>
   <td>
-    <input type="submit" name="excluir" class="btn btn-danger" value="Excluir">
+    <a href="finaliza.php"><button type="submit" name="excluir" class="btn btn-danger" value="Excluir"></a></button>
   </td>
 </tr>
 
@@ -61,6 +61,9 @@
 
 <br>
 <h3 class="text-center"><?php echo "Total do Pedido - R$ " . $totalgeral;?></h3>
+
+<?php $_SESSION["totalgeral"]=$totalgeral; ?>
+<h4><input type="submit" class="btn btn-primary" value="Finalizar Compra"></h4> 
 
 <?php
 }

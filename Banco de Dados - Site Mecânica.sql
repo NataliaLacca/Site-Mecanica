@@ -78,6 +78,22 @@ create table carrinho(
 	foto varchar(255) not null,
 	foreign key(codigopeca) references peca(codigopeca));
 
+create table venda(
+	idvenda integer primary key auto_increment,
+	data date not null,
+	valor double not null,
+	matricula integer not null,
+	foreign key(matricula) references funcionario(matricula));
+
+create table item(
+	iditem integer primary key auto_increment,
+	codigopeca integer not null,
+	quantidade integer not null,
+	valor double not null,
+	idvenda integer not null,
+	foreign key(codigopeca) references peca(codigopeca),
+	foreign key(idvenda) references venda(idvenda));
+
 create table servicopeca(
 	idservicopeca integer primary key auto_increment,
 	codigopeca integer not null,
